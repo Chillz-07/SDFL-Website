@@ -1,0 +1,186 @@
+
+/* ====================================
+   WHAT WE OFFER PAGE
+==================================== */
+
+.what-we-offer {
+  width: 100%;
+  min-height: 70vh;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 85px 35px;
+  font-family: Arial, sans-serif;
+}
+
+.what-we-offer * {
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+
+.offer-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* THREE CARDS */
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* CARD STYLE */
+
+.offer-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 35px 25px 25px;
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e9edf5;
+
+  box-shadow:
+    0 5px 0 rgba(20, 42, 82, 0.08),
+    0 12px 22px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 12px 0 rgba(20, 42, 82, 0.06),
+    0 20px 35px rgba(25, 50, 100, 0.12);
+}
+
+/* ICON */
+
+.offer-icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #eaf0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.offer-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #3667ef;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* TEXT */
+
+.offer-card h2 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #142a52;
+  margin: 0 0 14px;
+}
+
+.offer-card p {
+  font-size: 13px;
+  color: #697586;
+  line-height: 1.7;
+  margin: 0 0 24px;
+  max-width: 290px;
+  flex-grow: 1;
+}
+
+/* BUTTON */
+
+.offer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+
+  width: 100%;
+  min-height: 43px;
+  padding: 11px 12px;
+
+  background: #293f89;
+  color: #ffffff;
+  text-decoration: none;
+
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.offer-button:hover {
+  background: #182f70;
+  transform: translateY(-2px);
+}
+
+.offer-button span {
+  font-size: 17px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .offer-grid {
+    gap: 16px;
+  }
+
+  .offer-card {
+    padding: 28px 18px 20px;
+  }
+
+  .offer-card h2 {
+    font-size: 16px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .what-we-offer {
+    padding: 45px 20px;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .offer-card {
+    min-height: 260px;
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card,
+  .offer-button {
+    transition: none;
+  }
+
+  .offer-card:hover,
+  .offer-button:hover {
+    transform: none;
+  }
+}
