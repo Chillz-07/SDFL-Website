@@ -1,5 +1,10 @@
 
+import { Link } from "react-router-dom";
 import "./WhatWeOffer.css";
+
+// ==========================================
+// WHAT WE OFFER - PORTAL CARDS
+// ==========================================
 
 const services = [
   {
@@ -28,6 +33,10 @@ const services = [
   },
 ];
 
+// ==========================================
+// SERVICE ICONS
+// ==========================================
+
 function ServiceIcon({ type }) {
   if (type === "services") {
     return (
@@ -48,39 +57,62 @@ function ServiceIcon({ type }) {
     );
   }
 
-  return (
-    <svg viewBox="0 0 24 24" fill="none">
-      <rect x="3" y="7" width="18" height="14" rx="2" />
-      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-      <path d="M3 13h18" />
-    </svg>
-  );
+  if (type === "careers") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="7" width="18" height="14" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+        <path d="M3 13h18" />
+      </svg>
+    );
+  }
+
+  return null;
 }
+
+// ==========================================
+// WHAT WE OFFER PAGE
+// ==========================================
 
 export default function WhatWeOffer() {
   return (
     <main className="what-we-offer">
       <section className="offer-container">
+
         <div className="offer-grid">
           {services.map((service) => (
-            <article className="offer-card" key={service.title}>
+            <article
+              className="offer-card"
+              key={service.title}
+            >
+              {/* ICON */}
+
               <div className="offer-icon">
                 <ServiceIcon type={service.icon} />
               </div>
 
+              {/* TITLE */}
+
               <h2>{service.title}</h2>
+
+              {/* DESCRIPTION */}
+
               <p>{service.description}</p>
 
-              <a
-                href={service.path}
+              {/* NAVIGATION BUTTON */}
+
+              <Link
+                to={service.path}
                 className="offer-button"
               >
                 {service.button}
                 <span aria-hidden="true">→</span>
-              </a>
+              </Link>
+
             </article>
           ))}
         </div>
+
       </section>
     </main>
   );

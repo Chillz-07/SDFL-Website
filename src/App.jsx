@@ -13,12 +13,23 @@ import Services from "./components/Services.jsx";
 import WhySDFL from "./components/WhySDFL.jsx";
 import Feedback from "./components/Feedback.jsx";
 import Footer from "./components/Footer.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 // Main Pages
 import Gallery from "./pages/Gallery/Gallery.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import About from "./pages/About/About.jsx";
 import WhatWeOffer from "./pages/WhatWeOffer/WhatWeOffer.jsx";
+
+//WhatWeOffer
+import TrainingDetails from "./pages/courses/TrainingDetails.jsx";
+import TrainingProgrammes from "./pages/courses/TrainingProgrammes.jsx";
+
+//ANNUAL REPORTS
+import ServicesPortal from "./pages/Services/ServicesPortal.jsx";
+
+// ANNUAL REPORTS
+import AnnualReports from "./pages/AnnualReports/AnnualReports.jsx";
 
 // SDFL Team Pages
 import SDFLTeam from "./pages/SDFLTeam/SDFLTeam.jsx";
@@ -73,6 +84,12 @@ function App() {
           element={<About />}
         />
 
+        {/* ANNUAL REPORTS PAGE */}
+          <Route
+                path="/annual-reports"
+                element={<AnnualReports />}
+              />
+
         {/* Gallery */}
         <Route
           path="/gallery"
@@ -90,6 +107,28 @@ function App() {
           path="/what-we-offer"
           element={<WhatWeOffer />}
         />
+
+        <Route 
+          path="/courses" 
+          element={<TrainingProgrammes />} />
+
+        <Route 
+          path="/courses/:id" 
+          element={<TrainingDetails />} />
+        
+        {/* Main Services Listing */}
+        
+        <Route
+          path="/services"
+          element={<ServicesPortal />}
+          />
+        
+      {/* Individual Service Details */}
+        
+        <Route
+          path="/services/:serviceId"
+          element={<ServicesPortal />}
+          />
 
         {/* ==================================
             SDFL TEAM SECTION

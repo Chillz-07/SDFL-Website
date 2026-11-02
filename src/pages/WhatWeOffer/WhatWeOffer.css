@@ -1,51 +1,75 @@
 
 /* ====================================
    WHAT WE OFFER PAGE
+   SDFL BLUE AND WHITE THEME
 ==================================== */
 
 .what-we-offer {
   width: 100%;
   min-height: 70vh;
+
   background: #f4f4f4;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 85px 35px;
+
   font-family: Arial, sans-serif;
 }
 
-.what-we-offer * {
+.what-we-offer *,
+.what-we-offer *::before,
+.what-we-offer *::after {
   box-sizing: border-box;
 }
 
-/* MAIN CONTAINER */
+/* ====================================
+   MAIN CONTAINER
+==================================== */
 
 .offer-container {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
-/* THREE CARDS */
+/* ====================================
+   THREE PORTAL CARDS
+==================================== */
 
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 24px;
 }
 
-/* CARD STYLE */
+/* ====================================
+   CARD DESIGN
+==================================== */
 
 .offer-card {
+  position: relative;
+
   background: #ffffff;
-  border-radius: 10px;
-  padding: 35px 25px 25px;
-  min-height: 295px;
+
+  border-radius: 12px;
+
+  padding: 40px 30px 30px;
+
+  min-height: 320px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
-  border: 1px solid #e9edf5;
+
+  border: 1px solid #e5eaf3;
 
   box-shadow:
     0 5px 0 rgba(20, 42, 82, 0.08),
@@ -56,124 +80,243 @@
     box-shadow 0.3s ease;
 }
 
+/* CARD HOVER */
+
 .offer-card:hover {
   transform: translateY(-8px);
+
   box-shadow:
     0 12px 0 rgba(20, 42, 82, 0.06),
     0 20px 35px rgba(25, 50, 100, 0.12);
 }
 
-/* ICON */
+/* ====================================
+   ICON CONTAINER
+==================================== */
 
 .offer-icon {
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
+
   border-radius: 50%;
+
   background: #eaf0ff;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;
+
+  margin-bottom: 24px;
 }
 
+/* ICON */
+
 .offer-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
+
   stroke: #3667ef;
   stroke-width: 1.8;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-/* TEXT */
+/* ====================================
+   CARD HEADING
+==================================== */
 
 .offer-card h2 {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
+
   color: #142a52;
-  margin: 0 0 14px;
+
+  margin: 0 0 15px;
+
+  line-height: 1.4;
 }
 
+/* ====================================
+   CARD DESCRIPTION
+==================================== */
+
 .offer-card p {
-  font-size: 13px;
+  font-size: 14px;
+
   color: #697586;
+
   line-height: 1.7;
-  margin: 0 0 24px;
-  max-width: 290px;
+
+  margin: 0 0 25px;
+
+  max-width: 320px;
+
   flex-grow: 1;
 }
 
-/* BUTTON */
+/* ====================================
+   PORTAL BUTTON
+==================================== */
 
 .offer-button {
   display: flex;
+
   justify-content: center;
   align-items: center;
-  gap: 9px;
+
+  gap: 10px;
 
   width: 100%;
-  min-height: 43px;
-  padding: 11px 12px;
+
+  min-height: 48px;
+
+  padding: 12px 15px;
 
   background: #293f89;
+
   color: #ffffff;
+
   text-decoration: none;
 
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 700;
 
   transition:
     background 0.25s ease,
     transform 0.25s ease;
 }
 
+/* BUTTON HOVER */
+
 .offer-button:hover {
   background: #182f70;
+
+  color: #ffffff;
+
   transform: translateY(-2px);
 }
 
+/* BUTTON ARROW */
+
 .offer-button span {
-  font-size: 17px;
+  font-size: 19px;
+  line-height: 1;
 }
 
-/* TABLET */
+/* ====================================
+   TABLET RESPONSIVE
+==================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
+
+  .offer-container {
+    max-width: 800px;
+  }
+
   .offer-grid {
-    gap: 16px;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
   }
 
   .offer-card {
-    padding: 28px 18px 20px;
+    padding: 32px 22px 25px;
   }
 
   .offer-card h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
-/* MOBILE */
+/* ====================================
+   MOBILE RESPONSIVE
+==================================== */
 
 @media (max-width: 650px) {
+
   .what-we-offer {
     padding: 45px 20px;
   }
 
   .offer-grid {
     grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
   .offer-card {
-    min-height: 260px;
-    max-width: 420px;
+    min-height: 280px;
+
+    max-width: 430px;
+
     width: 100%;
+
     margin: 0 auto;
+
+    padding: 32px 22px 25px;
+  }
+
+  .offer-icon {
+    width: 68px;
+    height: 68px;
+  }
+
+  .offer-icon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .offer-card h2 {
+    font-size: 19px;
+  }
+
+  .offer-card p {
+    font-size: 13px;
   }
 }
 
+/* ====================================
+   SMALL MOBILE
+==================================== */
+
+@media (max-width: 400px) {
+
+  .what-we-offer {
+    padding: 35px 15px;
+  }
+
+  .offer-card {
+    padding: 28px 18px 22px;
+  }
+
+  .offer-card h2 {
+    font-size: 17px;
+  }
+
+  .offer-button {
+    font-size: 12px;
+  }
+}
+
+/* ====================================
+   ACCESSIBILITY
+==================================== */
+
+.offer-button:focus-visible {
+  outline: 3px solid #e7b75d;
+  outline-offset: 4px;
+}
+
+/* ====================================
+   REDUCED MOTION
+==================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
   .offer-card,
   .offer-button {
     transition: none;
