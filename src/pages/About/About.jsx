@@ -83,7 +83,7 @@ function About() {
               </p>
             </div>
 
-            {/* GALLERY BUTTON */}
+            {/* ACTION BUTTONS */}
 
             <div className="about-hero-actions">
               <Link
@@ -93,10 +93,33 @@ function About() {
                 Explore Our Journey
                 <span aria-hidden="true">→</span>
               </Link>
+
+              <Link
+                to="/annual-reports"
+                className="about-reports-button"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  width="19"
+                  height="19"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M4 17v3h16v-3" />
+                </svg>
+
+                Annual Reports
+              </Link>
             </div>
           </div>
 
-          {/* RIGHT SIDE - CLICKABLE BUILDING IMAGE */}
+          {/* RIGHT SIDE - BUILDING IMAGE */}
 
           <a
             href={sdflLocation}
@@ -120,28 +143,16 @@ function About() {
         </div>
       </section>
 
-      {/* =====================================
-          SECTION 2 - TWO ADVERTISEMENTS
-      ===================================== */}
-
+      {/* SECTION 2 - ADVERTISEMENTS */}
       <AboutAdvertisement />
 
-      {/* =====================================
-          SECTION 3 - PRODUCTS AND SERVICES
-      ===================================== */}
-
+      {/* SECTION 3 - PRODUCTS AND SERVICES */}
       <ProductsServices />
 
-      {/* =====================================
-          SECTION 4 - MISSION AND VISION
-      ===================================== */}
-
+      {/* SECTION 4 - MISSION AND VISION */}
       <MissionVision />
 
-      {/* =====================================
-          SECTION 5 - CORE VALUES
-      ===================================== */}
-
+      {/* SECTION 5 - CORE VALUES */}
       <CoreValues />
     </main>
   );

@@ -51,7 +51,7 @@ export default function SDFLTeam() {
             isActive ? "team-tab active" : "team-tab"
           }
         >
-          Academic Staff
+          Resource Persons List
         </NavLink>
       </nav>
 

@@ -17,7 +17,7 @@ import {
 import "./ResourcePool.css";
 
 /* ==========================================
-   SDFL ACADEMIC STAFF
+   SDFL RESOURCE PERSONS
    DATA PROVIDED BY SDFL
 ========================================== */
 
@@ -119,8 +119,10 @@ const resourcePeople = staffData.map(
   })
 );
 
+const ALL_CATEGORY = "All Resource Persons";
+
 const categories = [
-  "All Academic Staff",
+  ALL_CATEGORY,
   "PhD",
   "Master's Degree",
   "Postgraduate Diploma",
@@ -139,7 +141,7 @@ export default function ResourcePool() {
   const [search, setSearch] = useState("");
 
   const [activeCategory, setActiveCategory] = useState(
-    "All Academic Staff"
+    ALL_CATEGORY
   );
 
   const [sortOrder, setSortOrder] = useState("default");
@@ -162,7 +164,7 @@ export default function ResourcePool() {
         person.category.toLowerCase().includes(query);
 
       const matchesCategory =
-        activeCategory === "All Academic Staff" ||
+        activeCategory === ALL_CATEGORY ||
         person.category === activeCategory;
 
       return matchesSearch && matchesCategory;
@@ -234,7 +236,7 @@ export default function ResourcePool() {
 
   const resetFilters = () => {
     setSearch("");
-    setActiveCategory("All Academic Staff");
+    setActiveCategory(ALL_CATEGORY);
     setSortOrder("default");
     setCurrentPage(1);
   };
@@ -284,17 +286,18 @@ export default function ResourcePool() {
       <div className="rp-hero">
         <div className="rp-hero-content">
           <span className="rp-eyebrow">
-            SDFL / ACADEMIC STAFF
+            SDFL / RESOURCE PERSONS
           </span>
 
           <h1>
-            Discover Our <span>Academic Staff.</span>
+            Meet Our <span>Resource Persons</span>
           </h1>
 
           <p>
-            Explore our academic staff members and their
-            highest educational qualifications, supporting
-            skills development in Sri Lanka.
+            Explore our network of experienced resource
+            persons, their professional expertise, and
+            educational qualifications, contributing to
+            skills development across Sri Lanka.
           </p>
 
           <div className="rp-hero-stats">
@@ -303,7 +306,7 @@ export default function ResourcePool() {
 
               <div>
                 <strong>{resourcePeople.length}</strong>
-                <span>Academic Staff Members</span>
+                <span>Resource Persons</span>
               </div>
             </div>
 
@@ -346,14 +349,14 @@ export default function ResourcePool() {
           </div>
 
           <p className="rp-sidebar-description">
-            Filter academic staff by their highest
+            Filter resource persons by their highest
             educational qualification.
           </p>
 
           <div className="rp-category-list">
             {categories.map((category) => {
               const count =
-                category === "All Academic Staff"
+                category === ALL_CATEGORY
                   ? resourcePeople.length
                   : resourcePeople.filter(
                       (person) =>
@@ -412,7 +415,7 @@ export default function ResourcePool() {
                 onChange={(e) =>
                   handleSearch(e.target.value)
                 }
-                aria-label="Search academic staff"
+                aria-label="Search resource persons"
               />
 
               {search && (
@@ -434,7 +437,7 @@ export default function ResourcePool() {
                 onChange={(e) =>
                   handleSort(e.target.value)
                 }
-                aria-label="Sort academic staff"
+                aria-label="Sort resource persons"
               >
                 <option value="default">
                   Default Order
@@ -451,7 +454,7 @@ export default function ResourcePool() {
             </div>
           </div>
 
-          {/* STAFF LIST */}
+          {/* RESOURCE PERSON LIST */}
 
           <div
             ref={listStartRef}
@@ -460,13 +463,12 @@ export default function ResourcePool() {
             <div className="rp-results-heading">
               <div>
                 <span className="rp-section-label">
-                  ACADEMIC DIRECTORY
+                  RESOURCE PERSON DIRECTORY
                 </span>
 
                 <h2>
-                  {activeCategory ===
-                  "All Academic Staff"
-                    ? "All Academic Staff"
+                  {activeCategory === ALL_CATEGORY
+                    ? "All Resource Persons"
                     : activeCategory}
                 </h2>
               </div>
@@ -476,7 +478,7 @@ export default function ResourcePool() {
                 aria-live="polite"
               >
                 {filteredPeople.length} of{" "}
-                {resourcePeople.length} Members
+                {resourcePeople.length} Resource Persons
               </span>
             </div>
 
@@ -519,12 +521,11 @@ export default function ResourcePool() {
               <div className="rp-empty">
                 <Search size={38} />
 
-                <h3>No Academic Staff Found</h3>
+                <h3>No Resource Persons Found</h3>
 
                 <p>
-                  No academic staff members match
-                  your search or selected
-                  qualification category.
+                  No resource persons match your search
+                  or selected qualification category.
                 </p>
 
                 <button
@@ -543,7 +544,7 @@ export default function ResourcePool() {
             ITEMS_PER_PAGE && (
             <nav
               className="rp-pagination"
-              aria-label="Academic staff pagination"
+              aria-label="Resource persons pagination"
             >
               <div className="rp-pagination-top">
                 <div className="rp-pagination-info">
@@ -560,7 +561,7 @@ export default function ResourcePool() {
                     <strong>
                       {filteredPeople.length}
                     </strong>{" "}
-                    academic staff
+                    Resource Persons
                   </p>
                 </div>
 
@@ -667,8 +668,7 @@ export default function ResourcePool() {
           <div className="rp-directory-footer">
             <span>
               Showing {startItem}–{endItem} of{" "}
-              {filteredPeople.length} academic
-              staff
+              {filteredPeople.length} Resource Persons
             </span>
 
             <span>

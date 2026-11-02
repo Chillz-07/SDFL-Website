@@ -38,10 +38,11 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-
+  margin-top: -17px;
   background: transparent;
   border: none;
   box-shadow: none;
+  margin-left: -15px;
 }
 
 .navbar-logos a {
@@ -158,6 +159,8 @@
 
   .combined-logo {
     width: 310px;
+    margin-left: 5px;
+    margin-top: 5px;
   }
 
   .nav-links {
